@@ -1,0 +1,82 @@
+[
+    {
+            "id": 1,
+            "name": "Adeyeltrik",
+            "description": "A unique and innovative product that combines technology and creativity.",
+            "price": 29.99,
+            "category": "Electronics",
+            "image": "https://example.com/images/adeyeltrik.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Adeyeltrik",
+            "description": "A unique and innovative product that combines technology and creativity.",
+            "price": 29.99,
+            "category": "Electronics",
+            "image": "https://example.com/images/adeyeltrik.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Adeyeltrik",
+            "description": "A unique and innovative product that combines technology and creativity.",
+            "price": 29.99,
+            "category": "Electronics",
+            "image": "https://example.com/images/adeyeltrik.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Adeyeltrik",
+            "description": "A unique and innovative product that combines technology and creativity.",
+            "price": 29.99,
+            "category": "Electronics",
+            "image": "https://example.com/images/adeyeltrik.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Adeyeltrik",
+            "description": "A unique and innovative product that combines technology and creativity.",
+            "price": 29.99,
+            "category": "Electronics",
+            "image": "https://example.com/images/adeyeltrik.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Adeyeltrik",
+            "description": "A unique and innovative product that combines technology and creativity.",
+            "price": 29.99,
+            "category": "Electronics",
+            "image": "https://example.com/images/adeyeltrik.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Adeyeltrik",
+            "description": "A unique and innovative product that combines technology and creativity.",
+            "price": 29.99,
+            "category": "Electronics",
+            "image": "https://example.com/images/adeyeltrik.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Adeyeltrik",
+            "description": "A unique and innovative product that combines technology and creativity.",
+            "price": 29.99,
+            "category": "Electronics",
+            "image": "https://example.com/images/adeyeltrik.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Adeyeltrik",
+            "description": "A unique and innovative product that combines technology and creativity.",
+            "price": 29.99,
+            "category": "Electronics",
+            "image": "https://example.com/images/adeyeltrik.jpg"
+        },
+        {
+            "id": 10,
+            "name": "Adeyeltrik",
+            "description": "A unique and innovative product that combines technology and creativity.",
+            "price": 29.99,
+            "category": "Electronics",
+            "image": "https://example.com/images/adeyeltrik.jpg"
+        }
+]

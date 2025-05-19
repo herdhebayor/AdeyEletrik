@@ -1,0 +1,275 @@
+html,
+body{
+    width: 100%;
+    height: fit-content;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    border: 1px solid red;
+}
+
+ul{
+    list-style: none;
+}
+.btn, i{
+    font-weight: 700;
+    transition: .5s ease;
+}
+.fw-bolder span{
+    color: red;
+}
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+nav li,
+footer h5{
+    position: relative;
+}
+nav li::before,
+footer h5::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    bottom: -5px;
+    background-color: red;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: .5s ease-in;
+}
+nav li:hover::before{
+    transform: scaleX(1);
+}
+.hero,
+.mail-form{
+    background-image: url("./images/hero-img.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: -1;
+}
+.hero::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+.hero-header{
+    font-size: 4rem;
+    line-height: normal;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.btn .light{
+    background: transparent;
+    color: #ffffff;
+}
+.abt{
+    min-height: 150px;
+}
+.img-abt-1,
+.img-abt-2{
+    position: absolute;
+}
+.img-abt-1{
+    top: -6.3rem;
+    border-top: 10px solid #ffffff;
+    border-right: 10px solid #ffffff;
+    height: 250px;
+    border-top-right-radius: 5px;
+}
+.img-abt-2{
+    right: -2rem;
+    top: -2.7rem;
+    border-top: 10px solid #ffffff;
+    border-left: 10px solid #ffffff;
+    border-top-left-radius: 5px;
+}
+#service .card{
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+#service .card:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1),
+                0 0 20px rgba(0, 0, 0, 0.15),
+                0 0 30px rgba(0, 0, 0, 0.19);
+                border: 0;
+}
+.card-image,
+.card-details,
+.mail-form{
+    position: relative;
+    z-index: 3;
+}
+.mail-form{
+    background-image: url("./images/user-img/contact-background-img.jpeg");
+    border-radius: 25px;
+}
+ #service .card-image::before,
+#service .card::before,
+.mail-form::before{
+    position: absolute;
+    content: "";
+    background-color: rgb(255, 0, 0,0.2);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: .5s ease;
+}
+.mail-form::before{
+    transform: scaleY(1);
+    background-color: rgb(255, 0, 0,0.7);
+    border-radius: 22px;
+    z-index: -1;
+}
+#service .card::before{
+    background-color: rgb(189, 7, 7);
+    transform-origin: bottom;
+}
+#service .card:hover::before{
+    transform: scaleY(1);
+    border-radius: 5px;
+}
+#service .card:hover .card-details{
+    color: #ffffff;
+}
+#service .card:hover .btn{
+    color: #ffffff;
+}
+#service .btn:hover{
+     border: 2px solid;
+}
+#service .card:hover .card-image::before{
+    transform: scaleY(1);
+     border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+#service .card img,
+.card-image{
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+#testimonial .header{
+    font-size: 2.5rem;
+    line-height: normal;
+    font-weight: 700;
+}
+#testimonial .tittle{
+    width: fit-content;
+    background-color: rgb(47, 46, 46);
+}
+#gallery{
+    overflow-y: hidden;
+    position: relative;
+}
+
+#gallery .d-flex{
+    overflow: hidden;
+}
+#gallery .col,
+#gallery img{
+    height: 300px;
+    width: 250px;
+    cursor: pointer;
+    transition: .5s ease;
+    position: relative;
+    z-index: 1;
+}
+#gallery .col:hover{
+    box-shadow: 3px 5px 10px 10px rgba(0, 0, 0, 0.3),
+                6px 10px 20px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+#team .card-image , #team img{ 
+    min-height: 300px;
+    max-height: 300px;
+    object-fit: cover;
+    transition: .5s;
+}
+#team img{
+    min-width: 100%;
+    transition: .5s ease;
+}
+
+#team .card-image{
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#team .card-image::before{
+    position: absolute;
+    content: "";
+    background-color: rgb(255, 0, 0,0.2);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: .5s ease;
+}
+#team .card-image:hover::before{
+    transform: scaleY(1);
+}
+#team  img:hover{
+    transform: scale(1.1);
+}
+
+#contact .tittle{
+    background: rgba(100%, 100%, 100%, 0.15);
+    width: fit-content;
+}
+
+#contact{
+    background-image: url("./images/user-img/contact-background-img.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #ffffff;
+    z-index: 2;
+}
+#contact::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+.contact-card{
+    padding: 4rem;
+    padding-block: 2.5rem;
+    background: rgba(100%, 100%, 100%, 0.15);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+}
+#contact i{
+    height: fit-content;
+}
+#FAQ{
+    background-color: #faf8f8;
+}
+#FAQ .tittle{
+    background-color: rgb(189, 7, 7,.1);
+    /* -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px); */
+    width: fit-content;
+}
+footer h5::before{
+    transform: scaleX(.1);
+}
