@@ -1,14 +1,10 @@
 html,
 body{
     width: 100%;
-    height: fit-content;
-}
-body{
-    font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
-    border: 1px solid red;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
 }
-
 ul{
     list-style: none;
 }
@@ -19,10 +15,10 @@ ul{
 .fw-bolder span{
     color: red;
 }
-nav{
-    position: fixed;
-    top: 0;
-    left: 0;
+#userLoggedIn,
+#userLoggedIn-collapse{
+    display: none;
+    width: fit-content;
 }
 nav li,
 footer h5{
@@ -42,6 +38,22 @@ footer h5::before{
 }
 nav li:hover::before{
     transform: scaleX(1);
+}
+.logout-btn{
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: fit-content;
+    transition: .5s ease;
+    transform-origin: top;
+    transform: scaleY(0);
+}
+.logout-btn.collapse{
+    left: 0;
+    bottom: -20px;
+}
+.logout-btn.show{
+    transform: scaleY(1);
 }
 .hero,
 .mail-form{
@@ -73,10 +85,16 @@ nav li:hover::before{
 }
 .abt{
     min-height: 150px;
+    width: 100%;
+}
+.img-abt{
+    position: relative;
+    transition: 1s ease;
 }
 .img-abt-1,
 .img-abt-2{
     position: absolute;
+    transition: 1s ease;
 }
 .img-abt-1{
     top: -6.3rem;
@@ -86,11 +104,23 @@ nav li:hover::before{
     border-top-right-radius: 5px;
 }
 .img-abt-2{
-    right: -2rem;
+    right: -10px;
     top: -2.7rem;
     border-top: 10px solid #ffffff;
     border-left: 10px solid #ffffff;
     border-top-left-radius: 5px;
+}
+.img-abt-1:hover,
+.img-abt-2:hover,
+.img-abt:hover{
+    z-index: 1000;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0px 54px 55px rgba(0, 0, 0, 0.25) ,
+                0px -12px 30px rgba(0, 0, 0, 0.12),
+                0px 4px 6px rgba(0, 0, 0, 0.12),
+                0px 12px 13px rgba(0, 0, 0, 0.17),
+                0px -3px 5px rgba(0, 0, 0, 0.09) ;
 }
 #service .card{
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
@@ -111,6 +141,7 @@ nav li:hover::before{
 .mail-form{
     background-image: url("./images/user-img/contact-background-img.jpeg");
     border-radius: 25px;
+    width: 75%;
 }
  #service .card-image::before,
 #service .card::before,
@@ -171,10 +202,12 @@ nav li:hover::before{
 #gallery{
     overflow-y: hidden;
     position: relative;
+    cursor: all-scroll;
 }
 
 #gallery .d-flex{
-    overflow: hidden;
+    overflow: auto;
+    white-space: nowrap;
 }
 #gallery .col,
 #gallery img{
@@ -216,14 +249,15 @@ nav li:hover::before{
     width: 100%;
     height: 100%;
     transform: scaleY(0);
-    transform-origin: top;
-    transition: .5s ease;
+    transform-origin: bottom;
+    transition: .3s ease;
+    z-index: 100;
 }
 #team .card-image:hover::before{
     transform: scaleY(1);
 }
 #team  img:hover{
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(-5deg);
 }
 
 #contact .tittle{
@@ -266,10 +300,81 @@ nav li:hover::before{
 }
 #FAQ .tittle{
     background-color: rgb(189, 7, 7,.1);
-    /* -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px); */
     width: fit-content;
 }
+
 footer h5::before{
     transform: scaleX(.1);
+}
+.navbar-collapse{
+    position: fixed;
+    top: 0;
+    width:300px;
+    height: 100%;
+    background-color: rgba(100%, 100%, 100%, 0.5);
+    z-index: 2000;
+    left: 0;
+    transform: scaleX(0);
+    transition: .5s ease;
+    transform-origin: left;
+}
+.navbar-collapse .nav-menu{
+    width: 300px;
+    height: 100%;
+}
+.close-btn{
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 2rem;
+}
+.navbar-collapse.show{
+    transform: scaleX(1);
+}
+#username,
+#username-collapse{
+    font-size: 4rem;
+}
+@media screen and (max-width:768px) {
+    .contact-card{
+        padding: 1.5rem;
+    }
+    .img-abt-1{
+        width: 100%;
+        border:0;
+        top: -3rem;
+    }
+    .img-abt-2{
+        width: 100%;
+        top: 9rem;
+        right: 0;
+        border:0;
+    }
+    
+}
+@media screen and (max-width:568px) {
+    #team .card-image,
+    #team img{
+        height: 350px;
+    }
+    .btn{
+        font-weight: normal;
+    }
+    
+    .img-abt-1{
+        width: 100%;
+        border:0;
+        top: -9rem;
+    }
+    .img-abt-2{
+        width: 100%;
+        top: -3rem;
+        right: 0;
+        border:0;
+    }
+    .mail-form{
+        width: 100%;
+    }
+   
+    
 }

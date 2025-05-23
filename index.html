@@ -32,50 +32,98 @@
 	</head>
 	<body>
 		<!-- Nav  -->
-		<nav class="navbar px-5 p-3 bg-dark text-white  w-100">
+		<nav class="navbar px-md-5 p-3 bg-dark text-light w-100 fixed-top">
 			<div class="navbrand">
 				<span class="brand-icon"></span>
 				<p class="brand-text">Adey<span>Eletrik</span></p>
 			</div>
-			<div class="nav-menu ms-auto d-none d-md-block">
-				<ul class="d-flex gap-3 m-auto">
-					<li class="list-item"><a href="" class="nav-link">Home</a></li>
-					<li class="list-item"><a href="" class="nav-link">About</a></li>
-					<li class="list-item"><a href="" class="nav-link">Our Service</a></li>
-					<li class="list-item"><a href="" class="nav-link">Gallery</a></li>
-					<li class="list-item"><a href="" class="nav-link">Contact</a></li>
-					<li class="list-item"><a href="" class="nav-link">Projects</a></li>
-					<li class="list-item"><a href="" class="nav-link">FAQ's</a></li>
-				</ul>
-			</div>
-			<div class="nav-btn ms-5 d-none d-md-block">
-				<a href="" class="btn btn-light px-3 rounded-0">Log in</a>
-				<a href="./sign-up.html" class="btn btn-danger px-3 rounded-0 ms-2"
-					>Sign Up</a
-				>
-			</div>
-			<div class="navbar-collapse d-none" id="navbarNav">
-				<div class="nav-menu">
-					<ul class="navbar-nav">
+			<div class="nav-menu ms-auto d-none d-lg-block">
+				<div class="d-flex">
+					<ul class="d-flex gap-3 m-auto">
 						<li class="list-item"><a href="" class="nav-link">Home</a></li>
-						<li class="list-item"><a href="" class="nav-link">About</a></li>
 						<li class="list-item">
-							<a href="" class="nav-link">Our Service</a>
+							<a href="#about" class="nav-link">About</a>
 						</li>
-						<li class="list-item"><a href="" class="nav-link">Gallery</a></li>
-						<li class="list-item"><a href="" class="nav-link">Contact</a></li>
+						<li class="list-item">
+							<a href="#service" class="nav-link">Our Service</a>
+						</li>
+						<li class="list-item">
+							<a href="#gallery" class="nav-link">Gallery</a>
+						</li>
+						<li class="list-item">
+							<a href="#contact" class="nav-link">Contact</a>
+						</li>
 						<li class="list-item"><a href="" class="nav-link">Projects</a></li>
-						<li class="list-item"><a href="" class="nav-link">FAQ's</a></li>
+						<li class="list-item"><a href="#FAQ" class="nav-link">FAQ's</a></li>
 					</ul>
-				</div>
-				<div class="nav-btn text-center">
-					<a href="" class="btn btn-light px-3 rounded-0">Log in</a>
-					<a href="./sign-up.html" class="btntn-danger px-3 rounded-0 b"
-						>Sign Up</a
-					>
+
+					<div class="nav-btn ms-5" id="nav-btn">
+						<a href="./log-in.html" class="btn btn-light px-3 rounded-0"
+							>Log in</a
+						>
+						<a href="./sign-up.html" class="btn btn-danger px-3 rounded-0 ms-2"
+							>Sign Up</a
+						>
+					</div>
+					<div class="position-relative ms-5 ps-5" id="userLoggedIn">
+						<div class="d-flex" id="caret">
+							<p
+								class="m-auto text-dark fw-bold me-1 border border-2 bg-danger-subtle rounded-circle p-1 px-2"
+								id="userName"
+							></p>
+							<bi class="bi bi-caret-down-fill m-auto" ></bi>
+						</div>
+						<div class="logout-btn collapse m-auto bg-dark" id="caret-drop">
+							<button class="btn text-light" id="logout-btn">Log out</button>
+						</div>
+					</div>
 				</div>
 			</div>
-			<button class="toggler d-block d-md-none" id="toggler">
+
+			<div class="navbar-collapse" id="navbar-collapse">
+				<div class="nav-menu bg-dark text-light">
+					<div class="position-relative border" id="userLoggedIn-collapse">
+						<div class="d-flex p-2" id="caret-collapse">
+							<p
+								class="text-dark fw-bold me-1 border border-2 bg-danger-subtle rounded-circle p-1 px-2"
+								id="userName-collapse"
+							></p>
+							<bi class="bi bi-caret-down-fill m-auto" ></bi>
+						</div>
+						<div class="logout-btn collapse" id="caret-drop-collapse">
+							<button class="btn text-light" id="logout-btn-collapse">Log out</button>
+						</div>
+					</div>
+					<ul class="navbar-nav p-5">
+						<li class="list-item"><a href="" class="nav-link text-light">Home</a></li>
+						<li class="list-item">
+							<a href="#about" class="nav-link text-light">About</a>
+						</li>
+						<li class="list-item">
+							<a href="#service" class="nav-link text-light">Our Service</a>
+						</li>
+						<li class="list-item">
+							<a href="#gallery" class="nav-link text-light">Gallery</a>
+						</li>
+						<li class="list-item">
+							<a href="#contact" class="nav-link text-light">Contact</a>
+						</li>
+						<li class="list-item"><a href="" class="nav-link text-light">Projects</a></li>
+						<li class="list-item"><a href="FAQ" class="nav-link text-light">FAQ's</a></li>
+					</ul>
+
+					<div class="nav-btn text-center mt-4" id="nav-btn-collapse">
+						<a href="./log-in.html" class="btn btn-light px-3 rounded-0"
+							>Log in</a
+						>
+						<a href="./sign-up.html" class="btn btn-danger px-3 rounded-0 ms-2"
+							>Sign Up</a
+						>
+					</div>
+					<i class="bi bi-x close-btn" id="close"></i>
+				</div>
+			</div>
+			<button class="toggler d-block d-lg-none" id="toggler">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 		</nav>
@@ -83,14 +131,14 @@
 		<!-- Nav -->
 		<!-- Main -->
 		<section
-			class="text-light py-5 p-md-5 p-2 hero w-100"
+			class="text-light py-5 p-lg-5 p-3 hero"
 			data-aos="zoom-out-left"
 			data-aos-duration="1000"
 		>
-			<div class="container py-5">
+			<div class="container">
 				<div class="row mt-5">
 					<div
-						class="col-md-6"
+						class="col-lg-6 col-md-8"
 						data-aos="slide-right"
 						data-aos-duration="1500"
 						data-aos-delay="300"
@@ -102,16 +150,20 @@
 							here to light up your life with sustainable energy solutions.
 						</p>
 						<div class="mt-5 d-flex">
-							<a href="" class="btn btn-danger p-md-3">
+							<a href="" class="btn btn-danger p-md-3 d-flex">
 								Get a free estimate
-								<span class="ms-1"><i class="bi bi-arrow-up-right"></i></span>
+								<span class="ms-1 d-none d-md-block"
+									><i class="bi bi-arrow-up-right"></i
+								></span>
 							</a>
 							<a
 								href=""
-								class="btn light text-light border-2 border-light p-md-3 ms-3"
+								class="btn light text-light border-2 border-light p-md-3 ms-3 d-flex"
 							>
 								Discover more
-								<span class="ms-1"><i class="bi bi-arrow-up-right"></i></span>
+								<span class="ms-1 d-none d-md-block"
+									><i class="bi bi-arrow-up-right"></i
+								></span>
 							</a>
 						</div>
 					</div>
@@ -119,19 +171,21 @@
 			</div>
 		</section>
 
-		<section class="py-5 p-md-5 p-2" id="about">
+		<section class="py-5 p-lg-5 p-2" id="about">
 			<div class="container">
-				<div class="row gap-5 justify-content-center align-items-center">
+				<div
+					class="row gap-lg-5 justify-content-lg-center align-items-lg-center"
+				>
 					<div class="col-md">
 						<div class=" ">
-							<div class="">
+							<div class="abt">
 								<img
 									src="./images/img-about1.jpeg"
 									alt=""
-									class="img-fluid w-100"
+									class="img-fluid w-100 img-abt"
 									data-aos="fade-down-left"
 									data-aos-duration="1000"
-								/>/>
+								/>
 							</div>
 							<div class="position-relative abt">
 								<img
@@ -151,7 +205,11 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6" data-aos="fade-in" data-aos-duration="1000">
+					<div
+						class="col-lg-6 col-md pt-md-0 pt-5"
+						data-aos="fade-in"
+						data-aos-duration="1000"
+					>
 						<h1>About Us</h1>
 						<p>
 							At AdeyEletrik, we power homes, businesses, and industries with
@@ -187,13 +245,13 @@
 			</div>
 		</section>
 
-		<section class="py-5 p-md-5 p-2" id="service">
+		<section class="py-5 p-lg-5 p-2" id="service">
 			<div class="container">
 				<h2 class="text-center" data-aos="fade-in" data-aos-duration="1000">
 					What we offer
 				</h2>
 				<p
-					class="w-md-50 w-100 text-center m-auto"
+					class="w-100 w-lg-50 w-md-75 text-center m-auto"
 					data-aos="fade-in"
 					data-aos-duration="1000"
 				>
@@ -201,7 +259,7 @@
 					installation, maintenance, and repair of electrical systems, as well
 					as energy-efficient solutions and smart home technology integration.
 				</p>
-				<div class="row row-cols-md-4 mt-3">
+				<div class="row row-cols-lg-4 row-cols-md-2 mt-3">
 					<div
 						class="col-md p-2"
 						data-aos="zoom-out-down"
@@ -216,7 +274,7 @@
 										class="img-fluid w-100"
 									/>
 								</div>
-								<div class="card-details p-3 text-center text-md-start">
+								<div class="card-details p-3 text-center">
 									<h4 class="card-tittle">
 										Electrical installation and Maintenance
 									</h4>
@@ -252,7 +310,7 @@
 										class="img-fluid w-100"
 									/>
 								</div>
-								<div class="card-details p-3 text-center text-md-start">
+								<div class="card-details p-3 text-center ">
 									<h4 class="card-tittle">Automation and smart system</h4>
 									<p class="card-text">
 										From smart lighting and climate control to energy-efficient
@@ -286,7 +344,7 @@
 										class="img-fluid w-100"
 									/>
 								</div>
-								<div class="card-details p-3 text-center text-md-start">
+								<div class="card-details p-3 text-center ">
 									<h4 class="card-tittle">CCTV surveillance and solutions</h4>
 									<p class="card-text">
 										We supply and install high-definition CCTV systems with
@@ -320,7 +378,7 @@
 										class="img-fluid w-100"
 									/>
 								</div>
-								<div class="card-details p-3 text-center text-md-start">
+								<div class="card-details p-3 text-center ">
 									<h4 class="card-tittle">
 										Security device and access control
 									</h4>
@@ -347,8 +405,12 @@
 
 		<section class="p-md-5 p-2 py-5 bg-dark text-light" id="testimonial">
 			<div class="conatiner">
-				<div class="row gap-5">
-					<div class="col-md-4" data-aos="slide-right" data-aos-duration="1000">
+				<div class="row gap-lg-5 p-md-0">
+					<div
+						class="col-lg-4 col-md"
+						data-aos="slide-right"
+						data-aos-duration="1000"
+					>
 						<h6 class="p-2 tittle rounded">Testimonials</h6>
 						<p class="header">Some Powerful reviews from some of our clients</p>
 						<p>
@@ -358,14 +420,14 @@
 						</p>
 						<a
 							href=""
-							class="btn btn-danger p-3"
+							class="btn btn-danger p-2 p-md-3"
 							data-aos="slide-right"
 							data-aos-duration="1000"
 						>
 							View all reviews <i class="bi bi-arrow-up-right"></i>
 						</a>
 					</div>
-					<div class="col-md px-md-5">
+					<div class="col-md px-lg-5 mt-3 mt-md-0">
 						<div
 							id="carouselExampleAutoplaying"
 							class="carousel slide"
@@ -526,32 +588,32 @@
 
 		<section class="py-5 p-0" id="gallery">
 			<div class="d-flex">
-				<div class="col p-1">
+				<div class="col">
 					<img src="./images/gallery/fullhouse.jpg" alt="" class="" />
 				</div>
 
-				<div class="col p-1">
+				<div class="col">
 					<img src="./images/gallery/bananaA5.jpg" alt="" class="" />
 				</div>
 
-				<div class="col p-1">
+				<div class="col">
 					<img src="./images/gallery/office-reception.jpg" alt="" class="" />
 				</div>
 
-				<div class="col p-1">
+				<div class="col">
 					<img src="./images/gallery/step-montague.jpg" alt="" class="" />
 				</div>
 
-				<div class="col p-1">
+				<div class="col">
 					<img src="./images/gallery/bananaA3.jpg" alt="" class="" />
 				</div>
-				<div class="col p-1">
+				<div class="col">
 					<img src="./images/gallery/step2.jpg" alt="" class="" />
 				</div>
-				<div class="col p-1">
+				<div class="col">
 					<img src="./images/gallery/shelfA5.jpg" alt="" class="" />
 				</div>
-				<div class="col p-1">
+				<div class="col">
 					<img src="./images/gallery/reception-montague.jpg" alt="" class=" " />
 				</div>
 			</div>
@@ -562,7 +624,7 @@
 				<h1 class="mb-4" data-aos="slide-right" data-aos-duration="1000">
 					Meet the team
 				</h1>
-				<div class="row">
+				<div class="row row-cols-md-2 row-cols-lg-4">
 					<div class="col-md">
 						<div class="card border-0">
 							<div
@@ -643,9 +705,9 @@
 			</div>
 		</section>
 
-		<section class="py-5 p-md-5 p-2" id="FAQ">
+		<section class="py-5 p-lg-5 p-2" id="FAQ">
 			<div class="container">
-				<div class="row gap-5">
+				<div class="row gap-lg-5">
 					<div class="col-md" data-aos="slide-right" data-aos-duration="1000">
 						<p class="p-2 tittle text-danger px-3 fw-bold">FAQ's</p>
 						<h1 class="w-50 fw-bolder">Frequently Best Asked Questions ?</h1>
@@ -653,11 +715,11 @@
 							That is why we've compiled the most frequently asked questions to
 							help the process smooth as possible
 						</p>
-						<a href="" class="btn btn-danger py-3"
+						<a href="" class="btn btn-danger py-md-3"
 							>Have any question <i class="bi bi-arrow-up-right"></i
 						></a>
 					</div>
-					<div class="col-md">
+					<div class="col-md mt-3 mt-md-0">
 						<div class="accordion" id="accordionExample">
 							<div
 								class="accordion-item mb-3 border-0"
@@ -817,10 +879,10 @@
 			</div>
 		</section>
 
-		<section class="py-5 p-md-5 p-2" id="contact">
+		<section class="py-5 p-lg-5 p-2" id="contact">
 			<div class="container">
-				<div class="row gap-4">
-					<div class="col-md p-4">
+				<div class="row gap-lg-3">
+					<div class="col-md p-md-4">
 						<p
 							class="p-2 tittle rounded"
 							data-aos="slide-right"
@@ -834,47 +896,47 @@
 							team is here to help 24/7 .
 						</p>
 						<div
-							class="row row-cols-2 mt-5"
+							class="row row-cols-2 mt-5 fs-6 justify-content-center align-content-center"
 							data-aos="slide-right"
 							data-aos-duration="1000"
 						>
-							<div class="col fw-bold d-flex align-content-center">
+							<div class="col d-flex">
 								<i
-									class="bi bi-telephone-fill bg-danger p-2 text-center rounded fs-5 me-3"
+									class="bi bi-telephone-fill bg-danger p-2 text-center rounded fs-5 me-2"
 								>
 								</i>
 								<div class="lh-1">
-									<p class="fw-bolder fs-4 text-dark-subtle">Mobile</p>
+									<p class="fw-bolder fs-4">Mobile</p>
 									<p>+234 902 306 6039</p>
 								</div>
 							</div>
-							<div class="col fw-bold d-flex align-content-center">
+							<div class="col d-flex">
 								<i
-									class="bi bi-envelope bg-danger p-2 text-center rounded fs-5 me-3"
+									class="bi bi-envelope bg-danger p-2 text-center rounded fs-5 me-2"
 								>
 								</i>
 								<div class="lh-1">
-									<p class="fw-bolder fs-4 text-dark-subtle">Email</p>
-									<p>Herdhebayor22@gmail.com</p>
+									<p class="fw-bolder fs-4">Email</p>
+									<p class="text-break">Herdhebayor22@gmail.com</p>
 								</div>
 							</div>
-							<div class="col fw-bold d-flex align-content-center mt-4">
+							<div class="col d-flex mt-4">
 								<i
-									class="bi bi-geo-alt-fill bg-danger p-2 text-center rounded fs-5 me-3"
+									class="bi bi-geo-alt-fill bg-danger p-2 text-center rounded fs-5 me-2"
 								>
 								</i>
 								<div class="lh-1">
-									<p class="fw-bolder fs-4 text-dark-subtle">Address</p>
+									<p class="fw-bolder fs-4">Address</p>
 									<p>407 close, banana island ikoyi, Lagos</p>
 								</div>
 							</div>
-							<div class="col fw-bold d-flex align-content-center mt-4">
+							<div class="col d-flex mt-4">
 								<i
-									class="bi bi-linkedin bg-danger p-2 text-center rounded fs-5 me-3"
+									class="bi bi-linkedin bg-danger p-2 text-center rounded fs-5 me-2"
 								>
 								</i>
 								<div class="lh-1">
-									<p class="fw-bolder fs-4 text-dark-subtle">LinkedIn</p>
+									<p class="fw-bolder fs-4">LinkedIn</p>
 									<p>AdeyEletrik</p>
 								</div>
 							</div>
@@ -943,23 +1005,25 @@
 			</div>
 		</section>
 
-		<section class="py-5 p-md-5 p-2" id="subscribe">
-			<div class="container">
-				<div class="bg-danger text-light m-auto p-5 w-md-75 w-100 mail-form">
+		<section class="py-5 p-md-5" id="subscribe">
+			<div class="container w-100">
+				<div class="bg-danger text-light m-auto p-md-5 p-3 mail-form">
 					<h1 class="text-center">Subscribe</h1>
-					<p class="w-75 text-center m-auto mb-3">
+					<p class="w-md-100 w-75 text-center m-auto mb-3">
 						Subscribe to our newsletter and get the latest news, updates, and
 						special offers delivered directly to your inbox.
 					</p>
 					<form action="" class="form-data">
-						<div class="d-flex w-75 m-auto gap-2">
+						<div
+							class="d-flex m-auto gap-2 justify-content-center align-content-center"
+						>
 							<input
 								type="email"
-								class="form-control w-75 p-3"
+								class="form-control w-lg-75 p-lg-3"
 								placeholder="Enter your email"
 							/>
-							<button type="submit" class="btn btn-light">
-								Subscribe <i class="bi bi-arrow-up-right"></i>
+							<button type="submit" class="btn btn-light d-flex">
+								Subscribe <i class="bi bi-arrow-up-right d-none d-lg-block"></i>
 							</button>
 						</div>
 					</form>
@@ -967,7 +1031,7 @@
 			</div>
 		</section>
 
-		<footer class="py-5 p-5 bg-dark text-light">
+		<footer class="py-5 p-md-5 p-2 bg-dark text-light">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
@@ -997,7 +1061,7 @@
 							</a>
 						</div>
 					</div>
-					<div class="col">
+					<div class="col mt-3 mt-md-0">
 						<div class="row">
 							<div class="col">
 								<h5>Quick links</h5>
@@ -1053,5 +1117,6 @@
 		<script>
 			AOS.init()
 		</script>
+		<script src="style.js"></script>
 	</body>
 </html>
