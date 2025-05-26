@@ -360,6 +360,9 @@ footer h5::before{
         right: 0;
         border:0;
     }
+    .images{
+        min-height: 450px;
+    }
     
 }
 @media screen and (max-width:568px) {
