@@ -41,6 +41,12 @@ function userIsLoggedIn(){
 	}
 }
 window.addEventListener('DOMContentLoaded', userIsLoggedIn);
+// document.addEventListener('click',(e)=>{
+// 	let target = e.target
+// 	if(target = navBarCollapse && navBarCollapse.className.includes('show')){
+// 		navBarCollapse.classList.remove('show')
+// 	}
+// })
 
 //Show log out button
 const caret = document.getElementById('caret')
@@ -61,5 +67,5 @@ document.getElementById('logout-btn-collapse').addEventListener('click', logoutU
 
 function logoutUser(){
 	localStorage.setItem('isLoggedIn', "false")
-	console.log('User logged out')
+	console.log(loggedIn)
 }

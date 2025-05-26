@@ -9,7 +9,6 @@ ul{
     list-style: none;
 }
 .btn, i{
-    font-weight: 700;
     transition: .5s ease;
 }
 .fw-bolder span{
@@ -42,18 +41,33 @@ nav li:hover::before{
 .logout-btn{
     position: absolute;
     right: 0;
-    bottom: -50px;
+    top: 110%;
+    line-height: normal;
     width: fit-content;
+    min-width: 80px;
     transition: .5s ease;
     transform-origin: top;
     transform: scaleY(0);
+    font-size: 12px;
+    box-shadow: 0px 0px 5px rgba(100%, 100%, 100%, 0.1);
 }
 .logout-btn.collapse{
     left: 0;
-    bottom: -20px;
+    box-shadow: none;
+    top: 50px;
 }
 .logout-btn.show{
     transform: scaleY(1);
+}
+.logout-btn button{
+    font-size: 12px;
+}
+.logout-btn button:hover{
+    text-decoration: underline;
+}
+#userName,
+#userName-collapse{
+    cursor: pointer;
 }
 .hero,
 .mail-form{
@@ -325,15 +339,11 @@ footer h5::before{
 .close-btn{
     position: absolute;
     right: 20px;
-    top: 15px;
+    top: 13px;
     font-size: 2rem;
 }
 .navbar-collapse.show{
     transform: scaleX(1);
-}
-#username,
-#username-collapse{
-    font-size: 4rem;
 }
 @media screen and (max-width:768px) {
     .contact-card{
@@ -375,6 +385,5 @@ footer h5::before{
     .mail-form{
         width: 100%;
     }
-   
-    
 }
+
