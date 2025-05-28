@@ -2,8 +2,13 @@ html,
 body{
     width: 100%;
     overflow-x: hidden;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Ubuntu", sans-serif;
     position: relative;
+}
+.brand-text{
+    font-family:  cursive;
+    font-weight: 700;
+    font-size: 1.5rem;
 }
 ul{
     list-style: none;
@@ -17,7 +22,7 @@ ul{
 #userLoggedIn,
 #userLoggedIn-collapse{
     display: none;
-    width: fit-content;
+    width: 100%;
 }
 nav li,
 footer h5{
@@ -37,37 +42,6 @@ footer h5::before{
 }
 nav li:hover::before{
     transform: scaleX(1);
-}
-.logout-btn{
-    position: absolute;
-    right: 0;
-    top: 110%;
-    line-height: normal;
-    width: fit-content;
-    min-width: 80px;
-    transition: .5s ease;
-    transform-origin: top;
-    transform: scaleY(0);
-    font-size: 12px;
-    box-shadow: 0px 0px 5px rgba(100%, 100%, 100%, 0.1);
-}
-.logout-btn.collapse{
-    left: 0;
-    box-shadow: none;
-    top: 50px;
-}
-.logout-btn.show{
-    transform: scaleY(1);
-}
-.logout-btn button{
-    font-size: 12px;
-}
-.logout-btn button:hover{
-    text-decoration: underline;
-}
-#userName,
-#userName-collapse{
-    cursor: pointer;
 }
 .hero,
 .mail-form{
@@ -323,18 +297,22 @@ footer h5::before{
 .navbar-collapse{
     position: fixed;
     top: 0;
-    width:300px;
+    width:100%;
     height: 100%;
     background-color: rgba(100%, 100%, 100%, 0.5);
     z-index: 2000;
     left: 0;
-    transform: scaleX(0);
+    transform: translateX(-100%);
     transition: .5s ease;
     transform-origin: left;
 }
 .navbar-collapse .nav-menu{
-    width: 300px;
+    width: 250px;
     height: 100%;
+    overflow-y: scroll;
+    transform: translateX(-100%);
+    transition: 1s ease;
+    transform-origin: left;
 }
 .close-btn{
     position: absolute;
@@ -342,8 +320,23 @@ footer h5::before{
     top: 13px;
     font-size: 2rem;
 }
+.navbar-collapse.show .nav-menu{ 
+    transform: translateX(0);
+}
 .navbar-collapse.show{
-    transform: scaleX(1);
+    transform: translateX(0);
+}
+#caret div{
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: black;
 }
 @media screen and (max-width:768px) {
     .contact-card{
@@ -363,9 +356,16 @@ footer h5::before{
     .images{
         min-height: 450px;
     }
+    .mail-form,
+    .mail-form::before{
+        border-radius: 10px;
+    }
     
 }
 @media screen and (max-width:568px) {
+    .navbar-collapse .nav-menu{
+        width: 60%;
+    }
     #team .card-image,
     #team img{
         height: 350px;
@@ -373,7 +373,10 @@ footer h5::before{
     .btn{
         font-weight: normal;
     }
-    
+    .mail-form,
+    .mail-form::before{
+        border-radius: 5px;
+    }
     .img-abt-1{
         width: 100%;
         border:0;
@@ -388,5 +391,109 @@ footer h5::before{
     .mail-form{
         width: 100%;
     }
+}
+
+/* profile */
+.profile{
+    width: 300px;
+    height: 100%;
+    overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    line-height: 10px;
+    transform: translateX(-500px);
+    transition: .5s ease;
+}
+.mobile-profile{
+    width: 100%;
+    line-height: 10px;
+    height: fit-content;
+}
+.profile.show{
+    transform: translateX(0);
+}
+.initial{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    font-size: 2rem;
+    font-weight: 700;
+    color: black;
+    border: 2px solid #ffffff;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.profile-details{
+    position: relative;
+}
+.profile-details::before,
+.profile-name::after{
+    position: absolute;
+    content: '';
+    right: 0;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(92, 255, 47);
+}
+.profile-details::before{
+    width: 110%;
+    left: -10px;
+    top: 115%;
+    background-color: rgb(255, 0, 0,.3);
+    height: 1px;
+    border-radius: 0;
+}
+.profile input,
+.mobile-profile input{
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    padding: 5px;
+    margin-top: 10px;
+    border-bottom: 1px solid #ffffff;
+    width: 100%;
+    color: #ffffff;
+    text-transform: capitalize;
+}
+.profile label,
+.mobile-profile label{
+    color: red;
+}
+.edit-btn,
+.edit-btn-mobile,
+.logout-btn-mobile,
+.logout-btn{
+    color: #ffffff;
+    padding: 0;
+}
+.edit-btn:hover,
+.edit-btn-mobile:hover,
+.logout-btn-mobile:hover,
+.logout-btn:hover{
+    text-decoration: underline;
+}
+.content-edit-desktop,
+.content-edit{
+    transition: .5s ease;
+    transform: scaleY(0);
+    transform-origin: top;
+    display: none;
+}
+.content-edit-desktop.show,
+.content-edit.show{
+    transform: scaleY(1);
+    display: block;
+}
+#role,
+#Profile-name{
+    text-transform: capitalize;
 }
 

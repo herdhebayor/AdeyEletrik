@@ -15,6 +15,8 @@ document
 		let address = document.getElementById('address').value
 		let password = document.getElementById('password').value
 		let confirmPassword = document.getElementById('confirmPassword').value
+		let phone= document.getElementById('phone').value
+		let occupation = document.getElementById('occupation').value
 		let passwordError = document.getElementById('passwordError')
 		let confirmPasswordError = document.getElementById('confirmPasswordError')
 
@@ -42,6 +44,8 @@ document
 			password: password,
 			sex: sex,
 			address: address,
+			phone:phone,
+			occupation:occupation,
 		}
 		// Store form data in local storage
 		localStorage.setItem('formData', JSON.stringify(formData))

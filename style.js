@@ -6,6 +6,9 @@ const closeCollapse = document.getElementById('close')
 const userLoggedIn = document.getElementById('userLoggedIn')
 const userLoggedInCollapse = document.getElementById('userLoggedIn-collapse')
 const loggedIn = localStorage.getItem('isLoggedIn')
+const formData = localStorage.getItem('formData')
+let parsedData = JSON.parse(formData)
+let loggedInValue = loggedIn
 
 navToggler.addEventListener('click', () => {
 	navBarCollapse.classList.add('show')
@@ -16,56 +19,39 @@ closeCollapse.addEventListener('click', () => {
 
 //Check if user have logged in
 
-function userIsLoggedIn(){
-	const formData = localStorage.getItem('formData')
-	const parsedData = JSON.parse(formData)
+function userIsLoggedIn() {
 	console.log(loggedIn)
 	const username = document.getElementById('userName')
 	const usernameCollapse = document.getElementById('userName-collapse')
-	if(loggedIn === "true"){
-		
-		username.innerHTML = parsedData.firstName[0];
-		usernameCollapse.innerHTML =  parsedData.firstName[0];
+	if (loggedInValue === 'true') {
+		username.innerHTML = parsedData.firstName[0]
+		document.getElementById('profile-name').innerHTML = parsedData.name
+		document.getElementById('role').innerHTML = parsedData.occupation
+		document.getElementById('mobile').innerHTML = parsedData.phone
 		userLoggedIn.style.display = 'block'
 		userLoggedInCollapse.style.display = 'block'
 		document.getElementById('nav-btn').style.display = 'none'
 		document.getElementById('nav-btn-collapse').style.display = 'none'
-	}else{
-		console.log('trues')
+	} else {
 		username.innerHTML = ''
-		usernameCollapse.innerHTML = ''
+		document.getElementById('profile-name').innerHTML = ''
+		document.getElementById('role').innerHTML = ''
+		document.getElementById('mobile').innerHTML = ''
 		userLoggedIn.style.display = 'none'
 		userLoggedInCollapse.style.display = 'none'
 		document.getElementById('nav-btn').style.display = 'block'
 		document.getElementById('nav-btn-collapse').style.display = 'block'
 	}
 }
-window.addEventListener('DOMContentLoaded', userIsLoggedIn);
-// document.addEventListener('click',(e)=>{
-// 	let target = e.target
-// 	if(target = navBarCollapse && navBarCollapse.className.includes('show')){
-// 		navBarCollapse.classList.remove('show')
-// 	}
-// })
+window.addEventListener('DOMContentLoaded', userIsLoggedIn)
 
-//Show log out button
-const caret = document.getElementById('caret')
-const collapseCaret = document.getElementById('caret-collapse')
-caret.addEventListener('click', ()=>{
-	const btn = document.getElementById('caret-drop')
-	btn.classList.toggle('show')
-})
+//Log out user
+const logoutBtn = document.querySelectorAll('.logout-btn')
+logoutBtn.forEach((btn) => btn.addEventListener('click', logoutUser))
 
-
-collapseCaret.addEventListener('click', () => {
-	const btn = document.getElementById('caret-drop-collapse')
-	btn.classList.toggle('show')
-})
-
-document.getElementById('logout-btn').addEventListener('click', logoutUser)
-document.getElementById('logout-btn-collapse').addEventListener('click', logoutUser)
-
-function logoutUser(){
-	localStorage.setItem('isLoggedIn', "false")
-	console.log(loggedIn)
+function logoutUser() {
+	loggedInValue = false
+	localStorage.setItem('isLoggedIn', loggedInValue)
+	window.location.reload()
+	console.log(loggedInValue)
 }

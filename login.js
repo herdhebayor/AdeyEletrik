@@ -15,13 +15,13 @@ document.getElementById('login-form').addEventListener('submit', (e) => {
 	if (formData && formData !== '') {
 		const parsedData = JSON.parse(formData)
 		if ( username.value !== parsedData.email) {
-			error.innerHTML = 'incorrect username '
+			error.innerHTML = 'incorrect username or password '
 			return
 		} else {
 			error.innerHTML = ''
 		}
 		if (password.value !== parsedData.password) {
-			error.innerHTML = 'incorrect  password'
+			error.innerHTML = 'incorrect username or password'
 			return
 		} else {
 			error.innerHTML = ''
